@@ -1,18 +1,15 @@
 {
-    "name": "pxt-ubit-extension",
+    "name": "pxt-accelmagiq-math",
     "version": "0.1.0-alpha",
-    "description": "(description: this description is written in pxt.json)",
+    "description": "A Simplified Analytic Attitude Determination Algorithm Using Accelerometer and Magnetometer on micro:bit.",
     "dependencies": {
         "core": "*"
     },
     "files": [
-        "README.md",
+        "src/accelmagiq.math.ts",
         "enums.d.ts",
         "shims.d.ts",
-        "src/custom.ts",
-        "src/custom.cpp",
-        "src/customlib.h",
-        "src/customlib.cpp"
+        "README.md"
     ],
     "testFiles": [
         "test/test.ts"
