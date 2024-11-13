@@ -14,7 +14,7 @@
  */
 //% block="AccelMagiQ"
 //% weight=95 color=#4b0082 icon="\uf1d8"
-//% groups="['Sensor', 'Quaternion', 'EulerAngles', ]"
+//% groups="['Quaternion', 'EulerAngles', 'Sensor', 'Service']"
 namespace accelmagiq {
     
     /**
@@ -40,7 +40,7 @@ namespace accelmagiq {
      * @param q An array [w, x, y, z].
      * @returns An instance of Quaternion. If there is an inconsistency, it returns the identity quaternion.
      */
-    //% block="Create Quaternion from Array %q"
+    //% block="create quaternion from array %q"
     //% group="Quaternion"
     //% weight=138
     export function quatFrom(q: number[]): Quaternion {
@@ -52,7 +52,7 @@ namespace accelmagiq {
      * @param q An instance of Quaternion.
      * @returns A normalized Quaternion.
      */
-    //% block="Normalize Quaternion %q"
+    //% block="normalize quaternion %q"
     //% group="Quaternion"
     //% weight=137
     export function normalize(q: Quaternion): Quaternion {
@@ -64,7 +64,7 @@ namespace accelmagiq {
      * @param q An instance of Quaternion.
      * @returns The conjugate of the quaternion.
      */
-    //% block="Conjugate Quaternion %q"
+    //% block="conjugate quaternion %q"
     //% group="Quaternion"
     //% weight=136
     export function conjugate(q: Quaternion): Quaternion {
@@ -77,7 +77,7 @@ namespace accelmagiq {
      * @param b The second quaternion.
      * @returns The product of the two quaternions.
      */
-    //% block="Multiply Quaternions %a and %b"
+    //% block="multiply quaternions %a and %b"
     //% group="Quaternion"
     //% weight=135
     export function multiply(a: Quaternion, b: Quaternion): Quaternion {
@@ -90,7 +90,7 @@ namespace accelmagiq {
      * @param b The second quaternion.
      * @returns The difference between the two quaternions.
      */
-    //% block="Difference of Quaternions %a and %b"
+    //% block="difference of quaternions %a and %b"
     //% group="Quaternion"
     //% weight=134
     export function diff(a: Quaternion, b: Quaternion): Quaternion {
@@ -102,7 +102,7 @@ namespace accelmagiq {
      * @param q An instance of Quaternion.
      * @returns The rotation angle in radians.
      */
-    //% block="Quaternion Rotation Angle %q"
+    //% block="quaternion rotation angle %q"
     //% group="Quaternion"
     //% weight=133
     export function quatRotationAngle(q: Quaternion): number {
@@ -117,7 +117,7 @@ namespace accelmagiq {
      * @param z Vector part (z): Indicates the z-axis of rotation.
      * @returns An instance of Quaternion.
      */
-    //% block="Create Quaternion w %w x %x y %y z %z"
+    //% block="create quaternion w %w x %x y %y z %z"
     //% inlineInputMode=inline
     //% group="Quaternion"
     //% weight=132
@@ -131,7 +131,7 @@ namespace accelmagiq {
      * @param rpy An instance of EulerAngles.
      * @returns An instance of Quaternion.
      */
-    //% block="Create Quaternion from Euler Angles %rpy"
+    //% block="create quaternion from euler angles %rpy"
     //% group="Quaternion"
     //% weight=131
     //% advanced=true
@@ -144,7 +144,7 @@ namespace accelmagiq {
      * @param q An instance of Quaternion.
      * @returns An array [w, x, y, z] representing the quaternion.
      */
-    //% block="Quaternion %q to Array"
+    //% block="quaternion %q to array"
     //% group="Quaternion"
     //% weight=130
     //% advanced=true
@@ -157,7 +157,7 @@ namespace accelmagiq {
      * @param q An instance of Quaternion.
      * @returns An instance of EulerAngles.
      */
-    //% block="Create Euler Angles from Quaternion %q"
+    //% block="create euler angles from quaternion %q"
     //% group="EulerAngles"
     //% weight=124
     export function rpyFromQuat(q: Quaternion): EulerAngles {
@@ -170,7 +170,7 @@ namespace accelmagiq {
      * @param angleRPY The angle to retrieve (Roll, Pitch, Yaw, or Azimuth).
      * @returns The specified angle in radians.
      */
-    //% block="Get Angle from Euler Angles %rpy angle %angleRPY"
+    //% block="get angle from euler angles %rpy angle %angleRPY"
     //% group="EulerAngles"
     //% weight=123
     export function angle(rpy: EulerAngles, angleRPY: AngleRPY): number {
@@ -195,7 +195,7 @@ namespace accelmagiq {
      * @param yaw Rotation around the Z-axis.
      * @returns An instance of EulerAngles.
      */
-    //% block="Create Euler Angles roll %roll pitch %pitch yaw %yaw"
+    //% block="create euler angles roll %roll pitch %pitch yaw %yaw"
     //% group="EulerAngles"
     //% weight=122
     //% advanced=true
@@ -208,7 +208,7 @@ namespace accelmagiq {
      * @param rpy An array [roll, pitch, yaw].
      * @returns An instance of EulerAngles. If there is an inconsistency, it returns the identity.
      */
-    //% block="Create Euler Angles from Array %rpy"
+    //% block="create euler angles from array %rpy"
     //% group="EulerAngles"
     //% weight=121
     //% advanced=true
@@ -221,7 +221,7 @@ namespace accelmagiq {
      * @param rpy An instance of EulerAngles.
      * @returns An array [roll, pitch, yaw] representing the Euler angles in radians.
      */
-    //% block="Euler Angles %rpy to Array"
+    //% block="euler angles %rpy to array"
     //% group="EulerAngles"
     //% weight=120
     //% advanced=true
@@ -237,7 +237,7 @@ namespace accelmagiq {
      * @param radian The angle in radians.
      * @returns The angle in integer degrees.
      */
-    //% block="Radians %radian to Integer Degrees"
+    //% block="radians %radian to integer degrees"
     //% group="EulerAngles"
     //% weight=112
     export function intDeg(radian: number): number {
@@ -249,7 +249,7 @@ namespace accelmagiq {
      * @param radian The angle in radians.
      * @returns The angle in decimal degrees.
      */
-    //% block="Radians %radian to Decimal Degrees"
+    //% block="radians %radian to decimal degrees"
     //% group="EulerAngles"
     //% weight=111
     //% advanced=true
@@ -262,7 +262,7 @@ namespace accelmagiq {
      * @param degree The angle in degrees.
      * @returns The angle in radians.
      */
-    //% block="Degrees %degree to Radians"
+    //% block="degrees %degree to radians"
     //% group="EulerAngles"
     //% weight=110
     //% advanced=true
