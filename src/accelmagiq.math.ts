@@ -14,7 +14,7 @@
  */
 //% block="AccelMagiQ"
 //% weight=95 color=#4b0082 icon="\uf1d8"
-//% groups="['Sensor', 'Quaternion', 'EulerAngles', ]"
+//% groups="['Quaternion', 'EulerAngles', 'Sensor', 'Service']"
 namespace accelmagiq {
     
     /**
